@@ -2,7 +2,6 @@ package com.roger.shop.service;
 
 import com.roger.shop.model.Category;
 
-public interface CategoryService {
+public interface CategoryService extends BaseService<Category>{
 
-	void save(Category category);
 }
