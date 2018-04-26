@@ -21,7 +21,10 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public void save(Category category) {
-		System.out.println("进入service层保存方法....");
+		Category category2 = new Category();
+		category2.setType("男士休闲");
+		category2.setHot(Boolean.FALSE);
+		getSession().save(category2);
 	}
 
 }
