@@ -5,7 +5,7 @@
 	<artifactId>shop</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shop Maven Webapp</name>
+	<name>shop</name>
 	<url>http://maven.apache.org</url>
 
 	<build>
