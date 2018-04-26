@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" 
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 指定由spring负责action对象的创建 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<!-- 是否启用开发模式(开发时设置为true,发布到生产环境后设置为false) -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 让struts2支持动态方法调用,使用叹号访问方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 引入资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发(开发时设置为true,发布到生产环境后设置为false) -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 设置浏览器是否缓存静态内容(开发时设置为false,发布到生产环境后设置为true) -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- Struts2在2.5版本后添加strict-method-invocation(严格方法访问)，默认为true， 不能使用动态方法调用功能，故需设为false -->
+	<package name="basePackage" extends="struts-default"
+		strict-method-invocation="false">
+	</package>
+	<!-- 修改struts2-convention-plugin插件中注解@Result的默认访问路径 -->
+	<constant name="struts.convention.result.path" value ="/WEB-INF/"/>
+</struts>
