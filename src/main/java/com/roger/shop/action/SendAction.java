@@ -1,24 +1,21 @@
 package com.roger.shop.action;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.ParentPackage;
-import org.apache.struts2.convention.annotation.Result;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+
+/**
+ * 此Action用于来完成 WEB-INF中 jsp与jsp请求转发的功能，不处理任何的逻辑 
+ * @author Roger.Li
+ */
 @Controller
-@ParentPackage(value = "basePackage")
-@Namespace(value = "/")
-@Action(value = "admin")
-@Result(name = "admin", location = "main/admin.jsp")
 public class SendAction extends ActionSupport {
 
 	private static final long serialVersionUID = 6680940374523204051L;
 
 	@Override
-	public String execute() throws Exception {
-		return "admin";
+	public String execute(){
+		return "send";
 	}
 }
