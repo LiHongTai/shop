@@ -16,6 +16,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
 	private Class<T> clazz;
 
+	//如果没有指定名称,则默认属性名称和id绑定
 	@Resource(name = "localSessionFactory")
 	private SessionFactory sessionFactory;
 

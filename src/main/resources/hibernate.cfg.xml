@@ -3,8 +3,8 @@
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory name="">
-		<!-- 配置数据信息库  交给Spring管理-->
-		<!--  
+		<!-- 配置数据信息库 交给Spring管理 -->
+		<!-- 
 		<property name="connection.url">jdbc:mysql://localhost:3306/shop?serverTimezone=UTC</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
@@ -15,9 +15,8 @@
 		<property name="hibernate.format_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		
+		<!-- 添加实体映射文件 -->
 		<mapping resource="com/roger/shop/model/Category.hbm.xml" />
-
+		<mapping resource="com/roger/shop/model/Account.hbm.xml" />
 	</session-factory>
-
 </hibernate-configuration>
