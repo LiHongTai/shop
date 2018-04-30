@@ -16,9 +16,9 @@ public class AccountServiceImplTest extends BaseTestCase {
 	@Test
 	public void testSave() {
 		Account account = new Account();
-		account.setLogin("admin");
-		account.setName("小强");
-		account.setPassword("admin");
+		account.setLogin("roger");
+		account.setName("约翰");
+		account.setPassword("roger");
 		accountService.save(account);
 	}
 

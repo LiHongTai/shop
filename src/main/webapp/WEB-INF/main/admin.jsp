@@ -2,58 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<%@ include file="../template/head.jsp"%>
-	
-	<style type="text/css">
-		#menu{
-			width: 200px;
-		}
-		
-		#menu ul{
-			list-style: none;
-			padding: 0px;
-			margin: 0px;
-		}
-		
-		#menu ul li{
-			border-bottom: 1px solid #fff;
-		}
-		
-		#menu ul li a{
-			display: block;
-			background-color: #91AAD2;
-			color: #fff;
-			padding: 5px;
-			text-decoration: none;
-		}
-		
-		#menu ul li a:hover {
-			background: #63B8FF;
-		}
-	</style>
-	
-	<script type="text/javascript">
-		$(function(){
-			$("a[title]").click(function(){
-				var tabTitle = $(this).text();
-				var href = $(this).attr("title");
-				//1.判断Tab选项卡，是否已经存在
-				//2.如果没有则创建一个tab页，否则切换到相应的tab页
-				if($("#tt").tabs('exists',tabTitle)){
-					//切换到tab页
-					$("#tt").tabs('select',tabTitle);
-				}else{
-					//创建新的tab页
-					$('#tt').tabs('add',{
-						title: tabTitle,
-						content:'<iframe src="' + href + '" frameborder="0" width="100%" height="100%"/>',
-						closable:true
-					});
-				}
-			});
-		});
-	</script>
-	
+	<%@ include file="../template/head.jsp"%>	
 </head>
 <body class="easyui-layout">
 	<div data-options="region:'north',title:'欢迎来到易购商城后台管理系统',split:true" style="height:100px;"></div>   

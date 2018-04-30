@@ -32,6 +32,9 @@ public class BaseAction<T> extends ActionSupport
 
 	private static final long serialVersionUID = 6155869410856217123L;
 
+	protected static final String TOTAL = "total";
+	protected static final String ROWS = "rows";
+	
 	@Resource
 	protected CategoryService categoryService;
 	
@@ -45,7 +48,13 @@ public class BaseAction<T> extends ActionSupport
 	protected Map<String, Object> application;
 
 	protected T model;
+	
+	protected Integer page;
+	
+	protected Integer rows;
 
+	protected Map<String,Object> pageMap = null;
+	
 	@Override
 	public void setApplication(Map<String, Object> application) {
 		this.application = application;
@@ -73,4 +82,16 @@ public class BaseAction<T> extends ActionSupport
 		}
 	}
 
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public void setRows(Integer rows) {
+		this.rows = rows;
+	}
+
+	public Map<String, Object> getPageMap() {
+		return pageMap;
+	}
+	
 }

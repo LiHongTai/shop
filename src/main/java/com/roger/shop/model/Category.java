@@ -16,5 +16,8 @@ public class Category implements Serializable{
 	private int id;
 	private String type;
 	private boolean hot;
+	private Account account;
+	
+	
 	
 }

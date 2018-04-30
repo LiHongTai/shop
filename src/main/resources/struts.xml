@@ -20,7 +20,7 @@
 	<constant name="struts.convention.result.path" value ="/WEB-INF/"/>
 
 	<!-- Struts2在2.5版本后添加strict-method-invocation(严格方法访问)，默认为true， 不能使用动态方法调用功能，故需设为false -->
-	<package name="basePackage" extends="struts-default"
+	<package name="basePackage" extends="json-default"
 		strict-method-invocation="false">
 		<global-results>
 			<result name="admin">/WEB-INF/main/admin.jsp</result>

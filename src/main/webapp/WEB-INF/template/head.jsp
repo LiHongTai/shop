@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="${shop}/jquery-easyui-1.3.5/themes/icon.css"></link>
 <link rel="stylesheet" href="${shop}/jquery-easyui-1.3.5/themes/default/easyui.css"></link>
 
+
 <script type ="text/javascript" src="${shop}/jquery-easyui-1.3.5/jquery.min.js"></script>
 <script type ="text/javascript" src="${shop}/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>
 <script type ="text/javascript" src="${shop}/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
+
+<!-- 自定义CSS 和 JS 文件 -->
+<link rel="stylesheet" href="${shop}/css/menu.css"></link>
+
+<script type ="text/javascript" src="${shop}/js/menu.js"></script>
+
