@@ -9,4 +9,6 @@ public interface CategoryService extends BaseService<Category> {
 	List<Category> queryJoinAccount(String type,int page, int size);
 	
 	Long getCount(String type);
+	
+	Integer deleteByIds(String ids);
 }

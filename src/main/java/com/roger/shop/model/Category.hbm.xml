@@ -16,7 +16,7 @@
         </property>
         
         <many-to-one name="account" class="Account">
-        	<column name="aid" />
+        	<column name="AID" />
         </many-to-one>
         
     </class>

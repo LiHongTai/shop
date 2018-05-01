@@ -1,22 +1,34 @@
 package com.roger.shop.service.impl;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.roger.shop.service.BaseService;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({ "unchecked" })
 @Service(value = "baseService")
+@Scope(value = "prototype")
 public class BaseServiceImpl<T> implements BaseService<T> {
 
-	private Class<T> clazz;
+	private Class<T> clazz = null;
 
-	//如果没有指定名称,则默认属性名称和id绑定
+	public BaseServiceImpl() {
+		try {
+			ParameterizedType parameterizedType = (ParameterizedType) this.getClass().getGenericSuperclass();
+			clazz = (Class<T>) parameterizedType.getActualTypeArguments()[0];
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	// 如果没有指定名称,则默认属性名称和id绑定
 	@Resource(name = "localSessionFactory")
 	private SessionFactory sessionFactory;
 

@@ -18,6 +18,7 @@
 
 <!-- 自定义CSS 和 JS 文件 -->
 <link rel="stylesheet" href="${shop}/css/menu.css"></link>
+<link rel="stylesheet" href="${shop}/css/common.css"></link>
 
 <script type ="text/javascript" src="${shop}/js/menu.js"></script>
 

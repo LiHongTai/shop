@@ -13,21 +13,28 @@ import com.roger.shop.util.QueryParamExecutor;
 public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService {
 
 	@Override
-	public List<Category> queryJoinAccount(String type,int page, int size) {
+	public List<Category> queryJoinAccount(String type, int page, int size) {
 		String hql = "FROM Category c LEFT JOIN FETCH c.account WHERE c.type LIKE :type";
-		return getSession().createQuery(hql)
-				.setParameter("type", QueryParamExecutor.contains(type))
-				.setFirstResult((page -1)*size)
-				.setMaxResults(size)
+		return getSession().createQuery(hql)//
+				.setParameter("type", QueryParamExecutor.contains(type))//
+				.setFirstResult((page - 1) * size)//
+				.setMaxResults(size)//
 				.list();
 	}
 
 	@Override
 	public Long getCount(String type) {
 		String hql = "SELECT COUNT(c) FROM Category c WHERE c.type LIKE :type";
-		return  (Long) getSession().createQuery(hql)
-				.setParameter("type", QueryParamExecutor.contains(type))
+		return (Long) getSession().createQuery(hql)//
+				.setParameter("type", QueryParamExecutor.contains(type))//
 				.uniqueResult();
+	}
+
+	@Override
+	public Integer deleteByIds(String ids) {
+		String hql = "DELETE FROM Category c WHERE c.id in " + QueryParamExecutor.in(ids);
+		return getSession().createQuery(hql)//
+				.executeUpdate();
 	}
 
 }

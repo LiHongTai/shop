@@ -11,7 +11,7 @@ $(function(){
 			//创建新的tab页
 			$('#tt').tabs('add',{
 				title: tabTitle,
-				content:'<iframe src="' + href + '" frameborder="0" width="100%" height="100%"/>',
+				content:'<iframe src="' + href + '" title="'+ tabTitle + '" frameborder="0" width="100%" height="100%"/>',
 				closable:true
 			});
 		}

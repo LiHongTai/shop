@@ -41,5 +41,11 @@ public class CategoryServiceImplTest extends BaseTestCase{
 		Long count = categoryService.getCount(type);
 		System.out.println("总记录数：" + count);
 	}
+	
+	@Test
+	public void shouldDeleteByIds() {
+		String ids = "7";
+		categoryService.deleteByIds(ids);
+	}
 
 }

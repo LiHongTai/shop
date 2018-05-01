@@ -29,7 +29,8 @@
 		                              此处以后显示相应的系统信息(包含当前系统的类型 ,当前项目的域名，硬件相关配置，或者报表)
 		    </div>   
 		</div>  
-		    	
     </div>   
+    <!-- 此处为弹出窗体公共DIV -->
+    <div id="win" data-options="collapsible:false,minimizable:false,maximizable:false,modal:true"></div>
 </body>  
 </html>

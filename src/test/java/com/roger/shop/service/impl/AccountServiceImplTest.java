@@ -1,5 +1,7 @@
 package com.roger.shop.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -16,10 +18,18 @@ public class AccountServiceImplTest extends BaseTestCase {
 	@Test
 	public void testSave() {
 		Account account = new Account();
-		account.setLogin("roger");
-		account.setName("约翰");
-		account.setPassword("roger");
+		account.setLogin("Mary");
+		account.setName("玛丽");
+		account.setPassword("Mary");
 		accountService.save(account);
+	}
+	
+	@Test
+	public void testFindAll() {
+		List<Account> accounts = accountService.findAll();
+		for (Account account : accounts) {
+			System.out.println(account);
+		}
 	}
 
 }

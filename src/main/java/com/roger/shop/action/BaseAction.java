@@ -1,6 +1,8 @@
 package com.roger.shop.action;
 
+import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -52,8 +54,14 @@ public class BaseAction<T> extends ActionSupport
 	protected Integer page;
 	
 	protected Integer rows;
+	
+	protected List<T> jsonList;
 
 	protected Map<String,Object> pageMap = null;
+	
+	protected String ids;
+	
+	protected InputStream inputStream;
 	
 	@Override
 	public void setApplication(Map<String, Object> application) {
@@ -90,8 +98,20 @@ public class BaseAction<T> extends ActionSupport
 		this.rows = rows;
 	}
 
+	public List<T> getJsonList() {
+		return jsonList;
+	}
+
 	public Map<String, Object> getPageMap() {
 		return pageMap;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+
+	public InputStream getInputStream() {
+		return inputStream;
 	}
 	
 }
