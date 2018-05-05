@@ -17,6 +17,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.roger.shop.service.AccountService;
 import com.roger.shop.service.CategoryService;
+import com.roger.shop.service.ProductService;
+import com.roger.shop.upload.FileImage;
+import com.roger.shop.upload.FileUpload;
 
 /**
  * Struts执行流程 先创建Action 在调用拦截器，拦截器访问成功，在执行Action方法
@@ -43,6 +46,12 @@ public class BaseAction<T> extends ActionSupport
 	@Resource
 	protected AccountService accountService;
 	
+	@Resource
+	protected ProductService productService;
+	
+	@Resource
+	protected FileUpload fileUpload;
+	
 	protected Map<String, Object> request;
 
 	protected Map<String, Object> session;
@@ -58,6 +67,8 @@ public class BaseAction<T> extends ActionSupport
 	protected List<T> jsonList;
 
 	protected Map<String,Object> pageMap = null;
+	
+	protected FileImage fileImage;
 	
 	protected String ids;
 	
@@ -104,6 +115,14 @@ public class BaseAction<T> extends ActionSupport
 
 	public Map<String, Object> getPageMap() {
 		return pageMap;
+	}
+
+	public FileImage getFileImage() {
+		return fileImage;
+	}
+
+	public void setFileImage(FileImage fileImage) {
+		this.fileImage = fileImage;
 	}
 
 	public void setIds(String ids) {

@@ -56,7 +56,7 @@
 						}
 					}
 				},'-',{
-					iconCls: 'icon-edit',
+					iconCls: 'icon-remove',
 					text:'删除类别',
 					handler: function(){
 						//首先获取被选中的行
@@ -114,7 +114,7 @@
 			        		}
 			        	}	
 			        },
-			        {field:'account.login',title:'所属管理源',width:100,align:'center',
+			        {field:'account.login',title:'所属管理员',width:100,align:'center',
 			        	formatter:function(value,row,index){
 			        		if(row.account != null && row.account.login != null){
 			        			return row.account.login;

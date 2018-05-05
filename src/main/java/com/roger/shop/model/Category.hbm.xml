@@ -1,23 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-
+<!-- Generated 2018-5-2 19:27:55 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping package="com.roger.shop.model">
     <class name="Category" table="CATEGORY">
-        <id name="id" type="java.lang.Integer">
+        <id name="id" type="int">
             <column name="ID" />
             <generator class="native" />
         </id>
         <property name="type" type="java.lang.String">
             <column name="TYPE" />
         </property>
-        <property name="hot" type="java.lang.Boolean">
+        <property name="hot" type="boolean">
             <column name="HOT" />
         </property>
-        
         <many-to-one name="account" class="Account">
-        	<column name="AID" />
+            <column name="CID" />
         </many-to-one>
-        
     </class>
 </hibernate-mapping>

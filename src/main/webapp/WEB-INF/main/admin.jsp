@@ -12,7 +12,7 @@
 		    <div title="基本操作">   
 		        <ul>
 					<li><a href="#" title="send_category_show.action">类别管理</a></li>
-					<li><a href="#">商品管理</a></li>
+					<li><a href="#" title="send_product_show.action">商品管理</a></li>
 				</ul>
 		    </div>   
 		    <div title="其他操作" style="padding:10px;">   

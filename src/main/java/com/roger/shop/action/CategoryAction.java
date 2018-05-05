@@ -33,12 +33,19 @@ import com.roger.shop.model.Category;
 @Results(value = {
 		@Result(name = "list", type = "json", params = { "root", "pageMap", "excludeProperties",
 				"rows\\[\\d+\\]\\.account\\.password,rows\\[\\d+\\]\\.account\\.name" }),
-		@Result(name = "deleteByIds", type = "stream", params = { "inputName", "inputStream" }) })
-@AllowedMethods(value = {"deleteByIds","update"})
+		@Result(name = "deleteByIds", type = "stream", params = { "inputName", "inputStream" }),
+		@Result(name = "jsonList" ,type = "json" ,params = {"root","jsonList","excludeProperties","\\[\\d+\\]\\.account,\\[\\d+\\]\\.hot"})
+		})
+@AllowedMethods(value = {"deleteByIds","update","findAll"})
 public class CategoryAction extends BaseAction<Category> {
 
 	private static final long serialVersionUID = -3319330936523663059L;
 
+	public String findAll() {
+		jsonList = categoryService.findAll();
+		return "jsonList";
+	}
+	
 	public String list() {
 		pageMap = new HashMap<>();
 

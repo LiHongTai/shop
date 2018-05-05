@@ -14,7 +14,8 @@
 			    url:'account!findAll.action',    
 			    valueField:'id',    
 			    textField:'login',
-			    panelHeight:'auto'
+			    panelHeight:'auto',
+			    editable:false
 			});  
 			
 			var accountId = "";
@@ -46,6 +47,7 @@
 						success: function(){
 							//关闭当前窗体
 							parent.$("#win").window("close");
+							$dg.datagrid('uncheckAll');
 							$dg.datagrid("reload");
 						}
 					});

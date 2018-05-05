@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-5-2 19:27:55 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.roger.shop.model">
+	<class name="Product" table="PRODUCT" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<property name="price" type="java.math.BigDecimal">
+			<column name="PRICE" precision="8" scale="2" />
+		</property>
+		<property name="pic" type="java.lang.String">
+			<column name="PIC" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" sql-type="LONGTEXT"/>
+		</property>
+		<property name="remarkDetail" type="java.lang.String">
+			<column name="REMARK_DETAIL" sql-type="LONGTEXT"/>
+		</property>
+		<property name="productDate" type="java.sql.Timestamp" insert="false" update="false">
+			<column name="PRODUCT_DATE" length="19" default="CURRENT_TIMESTAMP"/>
+		</property>
+		<property name="commend" type="java.lang.Boolean">
+			<column name="COMMEND" />
+		</property>
+		<property name="open" type="java.lang.Boolean">
+			<column name="OPEN" />
+		</property>
+		<many-to-one name="category" class="Category">
+			<column name="CID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

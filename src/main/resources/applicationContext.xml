@@ -10,13 +10,24 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<context:component-scan base-package="com.roger.shop.." />
+	<!-- 用于加载properties文件，在XML配置文件中使用 -->
+	<context:property-placeholder location="classpath:config.properties"/>
+	
+	<!-- 用于加载properties文件，用于JavaBean类中，使用SPEL表达式 -->
+	<bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<array>
+				<value>classpath:file.properties</value>
+			</array>
+		</property>
+	</bean>
 	
 	<!-- 配置数据源 -->
 	<bean id ="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/shop?serverTimezone=UTC"/>
-		<property name="user" value="root"/>
-		<property name="password" value="root"/>
+		<property name="driverClass" value="${driverClass}"/>
+		<property name="jdbcUrl" value="${jdbcUrl}"/>
+		<property name="user" value="${user}"/>
+		<property name="password" value="${password}"/>
 	</bean>
 	<!-- 配置SessionFactory -->
 	<bean id="localSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

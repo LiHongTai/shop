@@ -1,9 +1,10 @@
-DROP TABLE IF EXISTS `account`;
 
-CREATE TABLE `account` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `LOGIN` varchar(255) DEFAULT NULL,
-  `NAME` varchar(255) DEFAULT NULL,
-  `PASSWORD` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS ACCOUNT;
+
+create table ACCOUNT (
+	ID integer not null auto_increment, 
+	LOGIN varchar(255), 
+	NAME varchar(255), 
+	PASSWORD varchar(255), 
+	primary key (ID)
+) engine=MyISAM

@@ -18,5 +18,6 @@
 		<!-- 添加实体映射文件 -->
 		<mapping resource="com/roger/shop/model/Category.hbm.xml" />
 		<mapping resource="com/roger/shop/model/Account.hbm.xml" />
+		<mapping resource="com/roger/shop/model/Product.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

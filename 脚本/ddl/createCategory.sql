@@ -1,11 +1,10 @@
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS CATEGORY;
 
-CREATE TABLE `category` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `TYPE` varchar(255) DEFAULT NULL,
-  `HOT` bit(1) DEFAULT NULL,
-  `AID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `FKqdgd7c9hke9yjsehskwfgtw6c` (`aid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+create table CATEGORY (
+	ID integer not null auto_increment, 
+	TYPE varchar(255), 
+	HOT bit, 
+	CID integer, 
+	primary key (ID)
+) engine=MyISAM
