@@ -11,4 +11,6 @@ public interface CategoryService extends BaseService<Category> {
 	Long getCount(String type);
 	
 	Integer deleteByIds(String ids);
+	
+	List<Category> queryByHot(boolean hot);
 }

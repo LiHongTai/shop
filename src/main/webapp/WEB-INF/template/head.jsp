@@ -17,6 +17,8 @@
 <script type ="text/javascript" src="${shop}/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
 
 <!-- 自定义CSS 和 JS 文件 -->
+<link rel="stylesheet" href="${shop}/css/public.css"></link>
+<link rel="stylesheet" href="${shop}/css/style.css"></link>
 <link rel="stylesheet" href="${shop}/css/menu.css"></link>
 <link rel="stylesheet" href="${shop}/css/common.css"></link>
 

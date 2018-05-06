@@ -11,4 +11,6 @@ public interface ProductService extends BaseService<Product> {
 	Long getCount(String name);
 	
 	void deleteByIds(String ids);
+	
+	List<Product> queryByCid(int cid);
 }

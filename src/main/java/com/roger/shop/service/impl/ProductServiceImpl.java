@@ -35,4 +35,14 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 		String hql = "DELETE FROM Product p WHERE p.id in " + QueryParamExecutor.in(ids);
 		getSession().createQuery(hql).executeUpdate();
 	}
+
+	@Override
+	public List<Product> queryByCid(int cid) {
+		String hql = "FROM Product p JOIN FETCH p.category WHERE p.category.id = :cid AND p.commend = true AND p.open = true ";
+		return getSession().createQuery(hql)//
+				.setParameter("cid", cid)//
+				.setFirstResult(0)//
+				.setMaxResults(4)//
+				.list();
+	}
 }
