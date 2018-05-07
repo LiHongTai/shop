@@ -19,6 +19,8 @@
 <!-- 自定义CSS 和 JS 文件 -->
 <link rel="stylesheet" href="${shop}/css/public.css"></link>
 <link rel="stylesheet" href="${shop}/css/style.css"></link>
+<link rel="stylesheet" href="${shop}/css/detail.css"></link>
+
 <link rel="stylesheet" href="${shop}/css/menu.css"></link>
 <link rel="stylesheet" href="${shop}/css/common.css"></link>
 

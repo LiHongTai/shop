@@ -143,7 +143,7 @@
 				<!-- 小循环开始 -->
 				<c:forEach items="${productList}" var="product">
 					<li>
-						<a href="#" class="product_image">
+						<a href="${shop}/product!queryById.action?model.id=${product.id}" class="product_image">
 							<img src="${shop}/images/${product.pic}" />
 						</a>
 						<div class="product_info">

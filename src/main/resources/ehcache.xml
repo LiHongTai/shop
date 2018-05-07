@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
+	
+	<diskStore path="java.io.tmpdir"/>
+	<!-- 
+		maxElementsInMemory:在内存中缓存最大个数
+		maxElementsOnDisk:在磁盘内缓存最大个数
+		eternal： 是否永久保存，建议设置成false
+		timeToLiveSeconds：缓存对象的生命周期，当对象存在n秒后销毁
+		timeToIdleSeconds:当对象闲置n秒后销毁
+		overflowToDisk:内存溢出，是否支持缓存到磁盘
+		memoryStoreEvictionPolicy：缓存策略
+			FIFO:先进先出，此算法已淘汰
+			LRU:最近最少访问的，时间优先，会忽略访问次数的多少
+			LFU:最近最未使用算法，频率优先，会忽略访问的先后顺序
+			
+	 -->
+	<defaultCache
+            maxElementsInMemory="2"
+            eternal="true"
+            timeToIdleSeconds="60"
+            timeToLiveSeconds="120"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="FIFO">
+    </defaultCache>
+</ehcache>

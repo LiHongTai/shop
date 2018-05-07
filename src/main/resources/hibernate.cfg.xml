@@ -15,9 +15,21 @@
 		<property name="hibernate.format_sql">false</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 指定使用哪一个缓存框架 -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<!-- 开启查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
 		<!-- 添加实体映射文件 -->
 		<mapping resource="com/roger/shop/model/Category.hbm.xml" />
 		<mapping resource="com/roger/shop/model/Account.hbm.xml" />
 		<mapping resource="com/roger/shop/model/Product.hbm.xml" />
+		
+		<!-- 指定那些类使用二级缓存 -->
+		<class-cache usage="read-write" class="com.roger.shop.model.Product"/>
+		
 	</session-factory>
 </hibernate-configuration>

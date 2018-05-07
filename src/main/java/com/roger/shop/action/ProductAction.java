@@ -23,8 +23,9 @@ import com.roger.shop.model.Product;
 @Results({
 		@Result(name = "list", type = "json", params = { "root", "pageMap", "excludeProperties",
 				"rows\\[\\d+\\]\\.category\\.account" }),
-		@Result(name = "deleteByIds", type = "stream", params = { "inputName", "inputStream" }) })
-@AllowedMethods(value = { "deleteByIds", "update", "findAll" })
+		@Result(name = "deleteByIds", type = "stream", params = { "inputName", "inputStream" }),
+		@Result(name="detail", location = "product/detail.jsp")})
+@AllowedMethods(value = { "deleteByIds", "update", "findAll" ,"queryById"})
 public class ProductAction extends BaseAction<Product> {
 	private static final long serialVersionUID = -511729892841953642L;
 
@@ -51,5 +52,10 @@ public class ProductAction extends BaseAction<Product> {
 
 	public void upate() {
 		productService.update(model);
+	}
+	
+	public String queryById() {
+		request.put("product", productService.getById(model.getId()));
+		return "detail";
 	}
 }
