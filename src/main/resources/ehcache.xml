@@ -4,6 +4,8 @@
 	
 	<diskStore path="java.io.tmpdir"/>
 	<!-- 
+		net.sf.ehcache.config.CacheConfiguration
+		
 		maxElementsInMemory:在内存中缓存最大个数
 		maxElementsOnDisk:在磁盘内缓存最大个数
 		eternal： 是否永久保存，建议设置成false
